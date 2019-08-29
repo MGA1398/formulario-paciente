@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$primary: #FA0A80;
+$bodyc: #3B3F48;
+$inputc: #E8E9EB;
+$primaryfontfam:  Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+$primaryfontsize: 15pt;
+
+
+header{
+    background: $primary;
+    padding: 1em 0;
+    align-content: flex-end;
+    a{
+        color: white;
+        text-decoration: none;
+
+        &:hover{
+            color: white;
+            text-decoration: none;
+        }
+        .arrow{
+            width: 20px;
+        }
+    }
+    .title{
+        text-align: center;
+        font-weight: 500;
+        font-family: $primaryfontfam;
+        font-size: $primaryfontsize;
+    }
+}
+body{
+    font-family: $primaryfontfam;
+    color: $bodyc;
+    font-weight: normal;
+    input{
+        border: solid $inputc;
+        border-radius: 4%;
+        width: 100%;
+        margin: 8px 0;
+        padding: 5px 15px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+    mat-form-field{
+        border: solid $inputc;
+        border-radius: 4%;
+    }
+    
+}
