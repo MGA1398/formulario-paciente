@@ -9,109 +9,115 @@
         <button type="button" class="agendar">Agendar</button>
     </nav>
 </section>
-<section class="info_personal">
-    <h2>Información Personal</h2>
-    <div class="row">
-        <div class="col-sm-6">
-            <label for="in1nombre">Primer nombre</label><br>
-            <input type="text" class="form-input" id="in1nombre" name="in1nombre" placeholder="Luciana">
-        </div>
-        <div class="col-sm-6">
-                <label for="in2nombre">Segundo nombre</label><br>
-                <input type="text" class="form-input" id="in2nombre" name="in2nombre">
-        </div>
-        <div class="col-sm-6">
-                <label for="in1apellido">Primer Apellido</label><br>
-                <input type="text" class="form-input" id="in1apellido" name="in1apellido" placeholder="Perez">
-        </div>
-        <div class="col-sm-6">
-                <label for="in2apellido">Segundo Apellido</label><br>
-                <input type="text" class="form-input" id="in2apellido" name="in2apellido" placeholder="Vasquez">
-        </div>
-    </div>
-    <p class="cambio">¿Necesitas cambiar estos datos?<br> Por favor envianos un <a href="#">correo</a></p>
-</section>
-<section class="masinfo">
+<form [formGroup]="pacienteForm" (ngSubmit)="onSubmit ()">
+        <section class="info_personal">
+        <h2>Información Personal</h2>
         <div class="row">
-        <div class="col-sm-6">
-                <label for="cedula">Cédula</label><br>
-                <input type="number" class="form-input" id="cedula" name="cedula" placeholder="1713092255">
+                <div class="col-sm-6">
+                <label for="primerNombre">Primer nombre</label><br>
+                <input type="text" class="form-input" id="primerNombre" name="primerNombre" placeholder="Luciana" formControlName="primerNombre" required>
+                </div>
+                <div class="col-sm-6">
+                        <label for="segundoNombre">Segundo nombre</label><br>
+                        <input type="text" class="form-input" id="segundoNombre" name="segundoNombre" formControlName="segundoNombre">
+                </div>
+                <div class="col-sm-6">
+                        <label for="primerApellido">Primer Apellido</label><br>
+                        <input type="text" class="form-input" id="primerApellido" name="primerApellido" placeholder="Perez" formControlName="primerApellido" required>
+                </div>
+                <div class="col-sm-6">
+                        <label for="segundoApellido">Segundo Apellido</label><br>
+                        <input type="text" class="form-input" id="segundoApellido" name="segundoApellido" placeholder="Vasquez" formControlName="segundoApellido">
+                </div>
         </div>
-        <div class="col-sm-6">
-                <label for="fechanaci">Fecha de nacimiento</label><br>
-                <input type="text" class="form-input" id="fechanaci" name="fechanaci" placeholder="03 junio 1961">
+        <p class="cambio">¿Necesitas cambiar estos datos?<br> Por favor envianos un <a href="#">correo</a></p>
+        </section>
+        <section class="masinfo">
+                <div formGroupName="masinfo">
+                <div class="row">
+                <div class="col-sm-6">
+                        <label for="cedula">Cédula</label><br>
+                        <input type="number" class="form-input" id="cedula" name="cedula" placeholder="1713092255" formControlName="cedula" required>
+                </div>
+                <div class="col-sm-6">
+                        <label for="nacimiento">Fecha de nacimiento</label><br>
+                        <input type="text" class="form-input" id="nacimiento" name="nacimiento" placeholder="03 junio 1961" formControlName="nacimiento">
+                </div>
+                <div class="col-sm-6">
+                        <label for="genero">Género</label><br>
+                        <input type="text" class="form-input" id="genero" name="genero" placeholder="Femenino" formControlName="genero">
+                </div>
         </div>
-        <div class="col-sm-6">
-                <label for="genero">Género</label><br>
-                <input type="text" class="form-input" id="genero" name="genero" placeholder="Femenino">
         </div>
-</div>
-</section>
-<section class="info_contacto">
-        <h2>Información de Contacto</h2>
-        <div class="row">
-        <div class="col-sm-6">
-                <label for="pais">País</label><br>
-                <input type="text" class="form-input" id="pais" name="pais" placeholder="Ecuador">
+        </section>
+        <section class="info_contacto">
+                <div formGroupName="contacto">
+                <h2>Información de Contacto</h2>
+                <div class="row">
+                <div class="col-sm-6">
+                        <label for="pais">País</label><br>
+                        <input type="text" class="form-input" id="pais" name="pais" placeholder="Ecuador" formControlName="pais">
+                </div>
+                <div class="col-sm-6">
+                        <label for="ciudad">Ciudad</label><br>
+                        <input type="text" class="form-input" id="ciudad" name="ciudad" placeholder="Quito" formControlName="ciudad">
+                </div>
+                <div class="col-sm-6">
+                <label for="correo">Dirección de correo</label><br>
+                <input type="email" class="form-input" id="correo" name="correo" placeholder="car***@g***.com" formControlName="correo">
+                </div>
+                <div class="col-sm-6">
+                        <label for="celular">Celular</label><br>
+                        <div class="container">
+                        <div class="row"> 
+                        <mat-form-field class="col-4" placeholder="593">
+                                <mat-select [(value)]="selected">
+                                        <mat-option value="EC"><img src="assets/images/24px/EC.png" alt="EC" class="rounded-circle"> (593)</mat-option>
+                                        <mat-option value="ES"><img src="assets/images/24px/ES.png" alt="ES" class="rounded-circle"> (34)</mat-option>
+                                        <mat-option value="US"><img src="assets/images/24px/US.png" alt="US" class="rounded-circle"> (1)</mat-option>
+                                        <mat-option value="AR"><img src="assets/images/24px/AR.png" alt="AR" class="rounded-circle"> (54)</mat-option>
+                                        <mat-option value="AU"><img src="assets/images/24px/AU.png" alt="AU" class="rounded-circle"> (61)</mat-option>
+                                        <mat-option value="BE"><img src="assets/images/24px/BE.png" alt="BE" class="rounded-circle"> (32)</mat-option>
+                                        <mat-option value="BZ"><img src="assets/images/24px/BZ.png" alt="BZ" class="rounded-circle"> (501)</mat-option>
+                                        <mat-option value="BO"><img src="assets/images/24px/BO.png" alt="BO" class="rounded-circle"> (591)</mat-option>
+                                        <mat-option value="BR"><img src="assets/images/24px/BR.png" alt="BR" class="rounded-circle"> (55)</mat-option>
+                                        <mat-option value="CA"><img src="assets/images/24px/CA.png" alt="CA" class="rounded-circle"> (1)</mat-option>
+                                        <mat-option value="CL"><img src="assets/images/24px/CL.png" alt="CL" class="rounded-circle"> (56)</mat-option>
+                                        <mat-option value="CN"><img src="assets/images/24px/CN.png" alt="CN" class="rounded-circle"> (86)</mat-option>
+                                        <mat-option value="CO"><img src="assets/images/24px/CO.png" alt="CO" class="rounded-circle"> (57)</mat-option>
+                                        <mat-option value="CR"><img src="assets/images/24px/CR.png" alt="CR" class="rounded-circle"> (506)</mat-option>
+                                        <mat-option value="CU"><img src="assets/images/24px/CU.png" alt="CU" class="rounded-circle"> (53)</mat-option>
+                                        <mat-option value="DK"><img src="assets/images/24px/DK.png" alt="DK" class="rounded-circle"> (45)</mat-option>
+                                        <mat-option value="SV"><img src="assets/images/24px/SV.png" alt="SV" class="rounded-circle"> (503)</mat-option>
+                                        <mat-option value="FR"><img src="assets/images/24px/FR.png" alt="FR" class="rounded-circle"> (33)</mat-option>
+                                        <mat-option value="DE"><img src="assets/images/24px/DE.png" alt="DE" class="rounded-circle"> (49)</mat-option>
+                                        <mat-option value="GR"><img src="assets/images/24px/GR.png" alt="GR" class="rounded-circle"> (30)</mat-option>
+                                        <mat-option value="MX"><img src="assets/images/24px/MX.png" alt="MX" class="rounded-circle"> (52)</mat-option>
+                                        <mat-option value="PA"><img src="assets/images/24px/PA.png" alt="PA" class="rounded-circle"> (507)</mat-option>
+                                        <mat-option value="PY"><img src="assets/images/24px/PY.png" alt="PY" class="rounded-circle"> (595)</mat-option>
+                                        <mat-option value="PE"><img src="assets/images/24px/PE.png" alt="PE" class="rounded-circle"> (51)</mat-option>
+                                        <mat-option value="PT"><img src="assets/images/24px/PT.png" alt="PT" class="rounded-circle"> (351)</mat-option>
+                                        <mat-option value="RU"><img src="assets/images/24px/RU.png" alt="RU" class="rounded-circle"> (7)</mat-option>
+                                        <mat-option value="KR"><img src="assets/images/24px/KR.png" alt="KR" class="rounded-circle"> (82)</mat-option>
+                                        <mat-option value="SE"><img src="assets/images/24px/SE.png" alt="SE" class="rounded-circle"> (46)</mat-option>
+                                        <mat-option value="AE"><img src="assets/images/24px/AE.png" alt="AE" class="rounded-circle"> (971)</mat-option>
+                                        <mat-option value="GB"><img src="assets/images/24px/GB.png" alt="GB" class="rounded-circle"> (44)</mat-option>
+                                        <mat-option value="UY"><img src="assets/images/24px/UY.png" alt="UY" class="rounded-circle"> (598)</mat-option>
+                                        <mat-option value="VE"><img src="assets/images/24px/VE.png" alt="VE" class="rounded-circle"> (58)</mat-option>
+                                        
+                                </mat-select>
+                        </mat-form-field>
+                        <input type="text" class="form-input col celu" id="celular" name="celular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="997124936" formControlName="celular">
+                        <a href="#" class="col-auto llamar">Llamar</a>               
         </div>
-        <div class="col-sm-6">
-                <label for="ciudad">Ciudad</label><br>
-                <input type="text" class="form-input" id="ciudad" name="ciudad" placeholder="Quito">
         </div>
-        <div class="col-sm-6">
-            <label for="inemail">Dirección de correo</label><br>
-            <input type="email" class="form-input" id="inemail" name="inemail" placeholder="car***@g***.com">
         </div>
-        <div class="col-sm-6">
-                <label for="incelular">Celular</label><br>
-                <div class="container">
-                <div class="row"> 
-                <mat-form-field class="col-4" placeholder="593">
-                        <mat-select [(value)]="selected">
-                                <mat-option value="EC"><img src="assets/images/24px/EC.png" alt="EC" class="rounded-circle"> (593)</mat-option>
-                                <mat-option value="ES"><img src="assets/images/24px/ES.png" alt="ES" class="rounded-circle"> (34)</mat-option>
-                                <mat-option value="US"><img src="assets/images/24px/US.png" alt="US" class="rounded-circle"> (1)</mat-option>
-                                <mat-option value="AR"><img src="assets/images/24px/AR.png" alt="AR" class="rounded-circle"> (54)</mat-option>
-                                <mat-option value="AU"><img src="assets/images/24px/AU.png" alt="AU" class="rounded-circle"> (61)</mat-option>
-                                <mat-option value="BE"><img src="assets/images/24px/BE.png" alt="BE" class="rounded-circle"> (32)</mat-option>
-                                <mat-option value="BZ"><img src="assets/images/24px/BZ.png" alt="BZ" class="rounded-circle"> (501)</mat-option>
-                                <mat-option value="BO"><img src="assets/images/24px/BO.png" alt="BO" class="rounded-circle"> (591)</mat-option>
-                                <mat-option value="BR"><img src="assets/images/24px/BR.png" alt="BR" class="rounded-circle"> (55)</mat-option>
-                                <mat-option value="CA"><img src="assets/images/24px/CA.png" alt="CA" class="rounded-circle"> (1)</mat-option>
-                                <mat-option value="CL"><img src="assets/images/24px/CL.png" alt="CL" class="rounded-circle"> (56)</mat-option>
-                                <mat-option value="CN"><img src="assets/images/24px/CN.png" alt="CN" class="rounded-circle"> (86)</mat-option>
-                                <mat-option value="CO"><img src="assets/images/24px/CO.png" alt="CO" class="rounded-circle"> (57)</mat-option>
-                                <mat-option value="CR"><img src="assets/images/24px/CR.png" alt="CR" class="rounded-circle"> (506)</mat-option>
-                                <mat-option value="CU"><img src="assets/images/24px/CU.png" alt="CU" class="rounded-circle"> (53)</mat-option>
-                                <mat-option value="DK"><img src="assets/images/24px/DK.png" alt="DK" class="rounded-circle"> (45)</mat-option>
-                                <mat-option value="SV"><img src="assets/images/24px/SV.png" alt="SV" class="rounded-circle"> (503)</mat-option>
-                                <mat-option value="FR"><img src="assets/images/24px/FR.png" alt="FR" class="rounded-circle"> (33)</mat-option>
-                                <mat-option value="DE"><img src="assets/images/24px/DE.png" alt="DE" class="rounded-circle"> (49)</mat-option>
-                                <mat-option value="GR"><img src="assets/images/24px/GR.png" alt="GR" class="rounded-circle"> (30)</mat-option>
-                                <mat-option value="MX"><img src="assets/images/24px/MX.png" alt="MX" class="rounded-circle"> (52)</mat-option>
-                                <mat-option value="PA"><img src="assets/images/24px/PA.png" alt="PA" class="rounded-circle"> (507)</mat-option>
-                                <mat-option value="PY"><img src="assets/images/24px/PY.png" alt="PY" class="rounded-circle"> (595)</mat-option>
-                                <mat-option value="PE"><img src="assets/images/24px/PE.png" alt="PE" class="rounded-circle"> (51)</mat-option>
-                                <mat-option value="PT"><img src="assets/images/24px/PT.png" alt="PT" class="rounded-circle"> (351)</mat-option>
-                                <mat-option value="RU"><img src="assets/images/24px/RU.png" alt="RU" class="rounded-circle"> (7)</mat-option>
-                                <mat-option value="KR"><img src="assets/images/24px/KR.png" alt="KR" class="rounded-circle"> (82)</mat-option>
-                                <mat-option value="SE"><img src="assets/images/24px/SE.png" alt="SE" class="rounded-circle"> (46)</mat-option>
-                                <mat-option value="AE"><img src="assets/images/24px/AE.png" alt="AE" class="rounded-circle"> (971)</mat-option>
-                                <mat-option value="GB"><img src="assets/images/24px/GB.png" alt="GB" class="rounded-circle"> (44)</mat-option>
-                                <mat-option value="UY"><img src="assets/images/24px/UY.png" alt="UY" class="rounded-circle"> (598)</mat-option>
-                                <mat-option value="VE"><img src="assets/images/24px/VE.png" alt="VE" class="rounded-circle"> (58)</mat-option>
-                                
-                        </mat-select>
-                </mat-form-field>
-                <input type="text" class="form-input col celu" id="incelular" name="incelular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="997124936">
-                <a href="#" class="col-auto llamar">Llamar</a>               
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="boton">
-        <nav>
-                <button type="button" class="reportar">Reportar paciente</button>
-        </nav>
-</section>
+        </div>
+        </div>
+        </section>
+        <section class="boton">
+                <nav>
+                        <button type="button" class="reportar">Reportar paciente</button>
+                </nav>
+        </section>
+</form>
