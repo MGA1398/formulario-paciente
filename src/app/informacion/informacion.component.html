@@ -72,10 +72,10 @@
                         <div class="row"> 
                         <mat-form-field class="col-4">
                                 <mat-select [(value)]="selected">
-                                        <mat-select-trigger> <img src="assets/images/24px/EC.png" alt="Flag"> {{selected}} </mat-select-trigger>
+                                        <mat-select-trigger> <img src="assets/images/24px/{{selected}}.png" alt="Flag"> {{selected}}</mat-select-trigger>
                                         <mat-option value="+593" id="EC"> <img src="assets/images/24px/EC.png" alt="EC" class="rounded-circle"> (593)</mat-option> 
                                         <mat-option value="+34" id="ES"> <img src="assets/images/24px/ES.png" alt="ES" class="rounded-circle"> (34)</mat-option>
-                                        <mat-option value="+1" id="US"> <img src="assets/images/24px/US.png" alt="US" class="rounded-circle"> (1)</mat-option>
+                                        <mat-option value="+1." id="US"> <img src="assets/images/24px/US.png" alt="US" class="rounded-circle"> (1)</mat-option>
                                         <mat-option value="+54" id="AR"> <img src="assets/images/24px/AR.png" alt="AR" class="rounded-circle"> (54)</mat-option>
                                         <mat-option value="+61" id="AU"> <img src="assets/images/24px/AU.png" alt="AU" class="rounded-circle"> (61)</mat-option>
                                         <mat-option value="+32" id="BE"> <img src="assets/images/24px/BE.png" alt="BE" class="rounded-circle"> (32)</mat-option>
@@ -108,7 +108,7 @@
                                         
                                 </mat-select>
                         </mat-form-field>
-                        <input type="text" class="form-input col celu" id="celular" name="celular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="997124936" formControlName="celular">
+                        <input type="text" class="form-input col celu" id="celular" name="celular" placeholder="997124936" formControlName="celular">
                         <a href="#" class="col-auto llamar" data-rel="external">Llamar</a>               
         </div>
         </div>
