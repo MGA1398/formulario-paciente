@@ -9,6 +9,8 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./informacion.component.scss']
 })
 export class InformacionComponent implements OnInit {
+  selected = '+593';
+
   pacienteForm = this.fb.group({
     primerNombre: ['', Validators.required],
     segundoNombre: [''],
@@ -27,7 +29,7 @@ export class InformacionComponent implements OnInit {
     }),
   });
 
-  selected = '+593';
+
 
   constructor(private fb: FormBuilder) { }
 
