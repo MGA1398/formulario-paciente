@@ -1,5 +1,20 @@
 @import 'src/styles';
 
+header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: $primary;
+    padding: 1em 0;
+    align-content: flex-end;
+    .title{
+        text-align: center;
+        font-weight: 500;
+        font-family: $primaryfontfam;
+        font-size: $primaryfontsize;
+    }
+}
 section{
     border-bottom-style: solid;
     border-width: 1px;

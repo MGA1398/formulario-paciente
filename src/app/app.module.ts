@@ -10,12 +10,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MyMaterialModule } from './material.module';
 import {MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BuscadorComponent } from './buscador/buscador.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InformacionComponent
+    InformacionComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

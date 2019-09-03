@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
-@import url('https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 $primary: #FA0A80;
 $bodyc: #3B3F48;
 $inputc: #E8E9EB;
-$primaryfontfam:  Montserrat, "Open Sans", Helvetica, Arial, sans-serif;
+$primaryfontfam: 'Montserrat', sans-serif;
 $primaryfontsize: 15pt;
 
 

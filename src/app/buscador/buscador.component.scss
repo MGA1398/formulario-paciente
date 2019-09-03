@@ -1,0 +1,50 @@
+@import 'src/styles';
+
+::placeholder{
+    color: rgba(221, 221, 221, 1);
+}
+header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    background: $primary;
+    padding-top: 2em 0;
+    padding-bottom: 5px;
+    font-size: 15px;
+    .head{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        p{
+            color: #FFFFFF;
+            font-weight: 500;
+            font-family: $primaryfontfam;
+            padding-right: 45px;
+        }
+        img{
+            float: left;
+            width: 20px;
+            margin-left: 15px;
+        }
+    }
+}
+.container{
+    text-align: center;
+    input{
+        border: none;
+        border-radius: 25px;
+        box-sizing: border-box;
+        width: 335px auto;
+        height: 32px;
+        background-image: url("../../assets/images/search.png");
+        background-position: 6px 7px;
+        background-repeat: no-repeat;
+        padding-left: 20pt;
+        -webkit-transition: width 0.4s ease-out;
+        transition: width 0.4s ease-out;
+        :focus{
+            width: 200px;
+        }
+    }
+}
