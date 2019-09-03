@@ -6,14 +6,25 @@ header{
     top: 0;
     right: 0;
     background: $primary;
-    padding: 1em 0;
-    align-content: flex-end;
-    .title{
+    padding: 5px;
+    div.container{
         text-align: center;
-        font-weight: 500;
-        font-family: $primaryfontfam;
-        font-size: $primaryfontsize;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        p{
+            color: rgba(255, 255, 255, 1);
+            font-weight: 500;
+            font-family: $primaryfontfam;
+            font-size: $primaryfontsize;
+            padding-right: 45px;
+        }
+        img{
+            float: left;
+            width: 35px;
+            padding-left: 15px;
+        }
     }
+    
 }
 section{
     border-bottom-style: solid;
