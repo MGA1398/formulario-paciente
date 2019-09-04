@@ -3,8 +3,9 @@
         <a href="#"><img class="menu" src="assets/images/menu.png" alt="Arrow"></a>
         <p class="mx-auto busqueda">Búsqueda</p>
     </div>
-    <section class="container">
-            <input type="search" placeholder="Busca entre tus pacientes">
+    <section class="d-flex container">
+            <input type="text" id="search" placeholder="Busca entre tus pacientes">
+            <button onclick="document.getElementById('search').value = ''">Cancelar</button>
     </section>
 </header>
  

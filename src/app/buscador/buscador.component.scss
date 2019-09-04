@@ -30,8 +30,9 @@ header{
     }
 }
 .container{
-    text-align: center;
+    position: relative;
     input{
+        text-align: justify;
         border: none;
         border-radius: 25px;
         box-sizing: border-box;
@@ -41,10 +42,25 @@ header{
         background-position: 6px 7px;
         background-repeat: no-repeat;
         padding-left: 20pt;
-        -webkit-transition: width 0.4s ease-out;
-        transition: width 0.4s ease-out;
-        :focus{
-            width: 200px;
-        }
+        -webkit-transition: width 0.3s ease-out;
+        transition: width 0.3s ease-out;
+        z-index: 2;
+        
     }
+    input:focus{
+        width: 75%;
+    }
+    button{
+        
+        position: absolute;
+        right: 10px;
+        margin-top: 5px;
+        border: none;
+        color: #FFFFFF;
+        font-weight: 500;
+        font-family: $primaryfontfam;
+        background-color: $primary;
+        z-index: 1;
+    }
+    
 }
