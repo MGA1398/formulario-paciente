@@ -7,17 +7,14 @@ header{
     right: 0;
     background: $primary;
     padding-top: 20px;
-    padding-bottom: 5px;
     div.container{
         text-align: center;
-        margin-top: 20px;
-        margin-bottom: 5px;
         p{
             color: rgba(255, 255, 255, 1);
             font-weight: 500;
             font-family: $primaryfontfam;
             font-size: $primaryfontsize;
-            padding-right: 45px;
+            padding-right: 40px;
         }
         img{
             float: left;
@@ -35,7 +32,7 @@ section{
 }
 section.container{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 18px;
     .parent{
     border-radius: 50%;;
     position: relative;

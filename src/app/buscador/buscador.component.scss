@@ -11,16 +11,16 @@ header{
     background: $primary;
     padding-top: 2em 0;
     padding-bottom: 5px;
-    font-size: 15px;
+    font-size: $primaryfontsize;
     .head{
         text-align: center;
-        margin-top: 20px;
-        margin-bottom: 15px;
+        margin-top: 15px;
+        margin-bottom: 5px;
         p{
             color: #FFFFFF;
             font-weight: 500;
             font-family: $primaryfontfam;
-            padding-right: 45px;
+            padding-right: 40px;
         }
         img{
             float: left;
