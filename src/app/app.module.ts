@@ -11,6 +11,7 @@ import { MyMaterialModule } from './material.module';
 import {MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { BuscadorComponent } from './buscador/buscador.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue : {float: 'never'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

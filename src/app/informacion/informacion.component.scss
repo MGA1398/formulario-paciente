@@ -1,126 +1,50 @@
 @import 'src/styles';
 
-header{
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    background: $primary;
-    padding-top: 20px;
+nav{
     div.container{
-        text-align: center;
+        background: $primary;
         p{
             color: rgba(255, 255, 255, 1);
             font-weight: 500;
             font-family: $primaryfontfam;
             font-size: $primaryfontsize;
-            padding-right: 40px;
         }
         img{
-            float: left;
-            width: 35px;
-            padding-left: 15px;
+            width: 15px;
         }
     }
-    
-}
-section{
-    border-bottom-style: solid;
-    border-width: 1px;
-    border-bottom-color: #DDDDDD;
-    font-size: 15px;
 }
 section.container{
-    text-align: center;
-    margin-top: 18px;
-    .parent{
-    border-radius: 50%;;
-    position: relative;
-    display: block;
-        .image1{
-        position: relative;
-        height: 120px;
-        width: 200px;
-        bottom: 0;
-        right: 0;
-        z-index: -1;
-        }
-        .image2{
-        position: absolute;
-        top: 90px;
-        left: 60%;
-        }
-    }
-    h1{
-    color: $bodyc;
-    font-weight: bold;
-    font-size: 18px;
-    margin-top: 10px;
+    img{
+        width: 120px;
     }
     button{
         background-color: $primary;
-        font-weight: bold;
+        font-weight: 500;
         font-size: 18px;
         color: white;
-        border: none;
-        padding: 5px 50px;
-        display: inline-block;
         border-radius: 25px;
-        margin: 10px;
     }
 }
 section.info_personal{
     p.cambio{
-        text-align: center;
         color: #A0AAAD;
         line-height: 1;
+        a{
+            color: $primary;
+            text-decoration: underline;
+        }
     }
 }
-h2{
-    padding: 5px;
-    margin-top: 15px;
-    font-weight: bolder;
+button.reportar{
+    background-color: white;
     font-size: 18px;
-}
-.row{
-    margin-bottom: 10px;
-    label{
-        margin-top: 5px;
-        margin-bottom: 3px;
-    }
-    .celu{
-        border-right: none;
-        border-left: none;
-    }
-    mat-form-field{
-        border-top-right-radius: 10%;
-        border-bottom-right-radius: 10%;
-    }
-}
-section.masinfo{
-    margin-top: 5%;
-}
-a.llamar{
     color: $primary;
-    font-weight: normal;
-    font-size: 15px;
-    text-decoration: underline;
-    border-top: solid $inputc;
-    border-right: solid $inputc;
-    border-bottom: solid $inputc;
-    padding-top: 5%;
+    border: solid $primary;
+    border-radius: 25px;
 }
-section.boton{
-    text-align: center;
-    button.reportar{
-        background-color: white;
-        font-weight: bolder;
-        font-size: 18px;
-        color: $primary;
-        border: solid $primary;
-        padding: 5px 25px;
-        display: inline-block;
-        border-radius: 25px;
-        margin: 10px;
-    }
+#eliminar{
+    color: #A0AAAD;
+    font-size: 18px;
+    text-decoration: underline;
 }

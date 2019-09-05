@@ -1,81 +1,75 @@
-<header>
-        <div class="d-flex justify-content-between container">
-                <a href="#" class="test"><img class="arrow" src="assets/images/arrow-left-white.svg" alt="Arrow"></a>
-                <p class="mx-auto title">Paciente</p>
+<nav class="navbar fixed-top">
+        <div class="align-baseline container">
+                <a href="#" class="text-decoration-none test"><img class="arrow" src="assets/images/arrow-left-white.svg" alt="Arrow"></a>
+                <p class="text-center title">Paciente</p>
         </div>
-</header>
-<section class="container">
-    <div class="parent">
-            <img src="assets/images/profilepic.svg" class="rounded mx-auto d-block image1" alt="Profile Pic">
-            <img src="assets/images/doctorisy2x.svg" class="rounded mx-auto d-block image2" alt="Logo">
-    </div>
-    <h1 class="nombre">Luciana Perez</h1>
-    <nav>
-        <button type="button" class="agendar">Agendar</button>
-    </nav>
+</nav>
+<section class="py-3 container">
+        <img src="assets/images/profilepic.svg" class="d-block mx-auto rounded-cirlce image1" alt="Profile Pic">
+        <h1 class="text-center font-weight-bold nombre m-3">Luciana Perez</h1>
+        <button type="button" class="d-block border border-0 mx-auto img-fluid py-2 px-5 agendar">Agendar</button>
 </section>
 <form [formGroup]="pacienteForm" (ngSubmit)="onSubmit ()">
-        <section class="info_personal">
-        <h2>Información Personal</h2>
+        <section class="pt-3 info_personal">
+        <h3 class="pt-1 font-weight-bold">Información Personal</h3>
         <div class="row">
-                <div class="col-sm-6">
+                <div class="mt-2 col-sm-6">
                 <label for="primerNombre">Primer nombre</label><br>
-                <input type="text" class="form-input" id="primerNombre" name="primerNombre" placeholder="Luciana" formControlName="primerNombre" required>
+                <input type="text" class="rounded-lg form-input" id="primerNombre" name="primerNombre" placeholder="Luciana" formControlName="primerNombre" required>
                 </div>
-                <div class="col-sm-6">
+                <div class="mt-3 col-sm-6">
                         <label for="segundoNombre">Segundo nombre</label><br>
-                        <input type="text" class="form-input" id="segundoNombre" name="segundoNombre" formControlName="segundoNombre">
+                        <input type="text" class="rounded-lg form-input" id="segundoNombre" name="segundoNombre" formControlName="segundoNombre">
                 </div>
-                <div class="col-sm-6">
+                <div class="mt-3 col-sm-6">
                         <label for="primerApellido">Primer Apellido</label><br>
-                        <input type="text" class="form-input" id="primerApellido" name="primerApellido" placeholder="Perez" formControlName="primerApellido" required>
+                        <input type="text" class="rounded-lg form-input" id="primerApellido" name="primerApellido" placeholder="Perez" formControlName="primerApellido" required>
                 </div>
-                <div class="col-sm-6">
+                <div class="mt-3 col-sm-6">
                         <label for="segundoApellido">Segundo Apellido</label><br>
-                        <input type="text" class="form-input" id="segundoApellido" name="segundoApellido" placeholder="Vasquez" formControlName="segundoApellido">
+                        <input type="text" class="rounded-lg form-input" id="segundoApellido" name="segundoApellido" placeholder="Vasquez" formControlName="segundoApellido">
                 </div>
         </div>
-        <p class="cambio">¿Necesitas cambiar estos datos?<br> Por favor envianos un <a href="#">correo</a></p>
+        <p class="m-4 text-center cambio">¿Necesitas cambiar estos datos?<br> Por favor envianos un <a href="#">correo</a></p>
         </section>
-        <section class="masinfo">
+        <section class="py-3 masinfo">
                 <div formGroupName="masinfo">
                 <div class="row">
                 <div class="col-sm-6">
-                        <label for="cedula">Cédula</label><br>
-                        <input type="number" class="form-input" id="cedula" name="cedula" placeholder="1713092255" formControlName="cedula" required>
+                        <label for="mt-3 cedula">Cédula</label><br>
+                        <input type="number" class="rounded-lg form-input" id="cedula" name="cedula" placeholder="1713092255" formControlName="cedula" required>
                 </div>
-                <div class="col-sm-6">
-                        <label for="nacimiento">Fecha de nacimiento</label><br>
-                        <input type="text" class="form-input" id="nacimiento" name="nacimiento" placeholder="03 junio 1961" formControlName="nacimiento">
+                <div class="mt-3 col-sm-6">
+                        <label for="mt-1 nacimiento">Fecha de nacimiento</label><br>
+                        <input type="text" class="rounded-lg form-input" id="nacimiento" name="nacimiento" placeholder="03 junio 1961" formControlName="nacimiento">
                 </div>
-                <div class="col-sm-6">
-                        <label for="genero">Género</label><br>
-                        <input type="text" class="form-input" id="genero" name="genero" placeholder="Femenino" formControlName="genero">
+                <div class="mt-3 col-sm-6">
+                        <label for="mt-1 genero">Género</label><br>
+                        <input type="text" class="rounded-lg form-input" id="genero" name="genero" placeholder="Femenino" formControlName="genero">
                 </div>
         </div>
         </div>
         </section>
-        <section class="info_contacto">
+        <section class="py-3 info_contacto">
                 <div formGroupName="contacto">
-                <h2>Información de Contacto</h2>
+                <h3 class="font-weight-bold">Información de Contacto</h3>
                 <div class="row">
-                <div class="col-sm-6">
-                        <label for="pais">País</label><br>
-                        <input type="text" class="form-input" id="pais" name="pais" placeholder="Ecuador" formControlName="pais">
+                <div class="mt-2 col-sm-6">
+                        <label for="mt-1 pais">País</label><br>
+                        <input type="text" class="rounded-lg form-input" id="pais" name="pais" placeholder="Ecuador" formControlName="pais">
                 </div>
-                <div class="col-sm-6">
-                        <label for="ciudad">Ciudad</label><br>
-                        <input type="text" class="form-input" id="ciudad" name="ciudad" placeholder="Quito" formControlName="ciudad">
+                <div class="mt-3 col-sm-6">
+                        <label for="mt-1 ciudad">Ciudad</label><br>
+                        <input type="text" class="rounded-lg form-input" id="ciudad" name="ciudad" placeholder="Quito" formControlName="ciudad">
                 </div>
-                <div class="col-sm-6">
-                <label for="correo">Dirección de correo</label><br>
-                <input type="email" class="form-input" id="correo" name="correo" placeholder="car***@g***.com" formControlName="correo">
+                <div class="mt-3 col-sm-6">
+                <label for="mt-1 correo">Dirección de correo</label><br>
+                <input type="email" class="rounded-lg form-input" id="correo" name="correo" placeholder="car***@g***.com" formControlName="correo">
                 </div>
-                <div class="col-sm-6">
-                        <label for="celular">Celular</label><br>
-                        <div class="container">
-                        <div class="row"> 
-                        <mat-form-field class="col-4">
+                <div class="mt-3 col-sm-6">
+                        <label for="mt-1 celular">Número de celular</label><br>
+                        <div class="row mx-1"> 
+                        <mat-form-field class="col-4 rounded-lg">
                                 <mat-select [(value)]="selected">
                                         <mat-select-trigger> <img src="assets/images/24px/{{selected}}.png" alt="Flag"> {{selected}}</mat-select-trigger>
                                         <mat-option value="+593" id="EC"> <img src="assets/images/24px/+593.png" alt="EC" class="rounded-circle"> (593)</mat-option> 
@@ -113,17 +107,15 @@
                                         
                                 </mat-select>
                         </mat-form-field>
-                        <input type="text" class="form-input col celu" id="celular" name="celular" placeholder="997124936" formControlName="celular">
-                        <a href="#" class="col-auto llamar" data-rel="external">Llamar</a>               
-        </div>
+                        <input type="text" class="border border-left-0 border-right-0 rounded-lg form-input col celu" id="celular" name="celular" placeholder="997124936" formControlName="celular">
+                        <a href="#" class="col-auto llamar" data-rel="external">Llamar</a>
         </div>
         </div>
         </div>
         </div>
         </section>
         <section class="boton">
-                <nav>
-                        <button type="button" class="reportar">Reportar paciente</button>
-                </nav>
+                <button type="button" class="m-4 mx-auto d-block font-weight-bold reportar px-4 py-1">Reportar paciente</button>
+                <p class="text-center"><a href="#" id="eliminar">Eliminar Paciente</a></p>
         </section>
 </form>

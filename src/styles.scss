@@ -8,6 +8,7 @@ $bodyc: #3B3F48;
 $inputc: #E8E9EB;
 $primaryfontfam: 'Montserrat', sans-serif;
 $primaryfontsize: 15px;
+$primaryfontweight: 400;
 
 
 header{
@@ -16,11 +17,8 @@ header{
     align-content: flex-end;
     a{
         color: white;
-        text-decoration: none;
-
         &:hover{
             color: white;
-            text-decoration: none;
         }
         .arrow{
             width: 20px;
@@ -39,16 +37,33 @@ body{
     font-weight: normal;
     input{
         border: solid $inputc;
-        border-radius: 4%;
+        border-width: 2px;
         width: 100%;
-        margin: 8px 0;
         padding: 5px 15px;
-        margin-bottom: 10px;
         box-sizing: border-box;
     }
     mat-form-field{
         border: solid $inputc;
+        border-width: 2px;
         border-radius: 4%;
     }
     
+}
+h1{
+    color: $bodyc;
+    font-size: $primaryfontsize;
+}
+h3{
+    font-size: $primaryfontsize;
+}
+section{
+    font-size: $primaryfontsize;
+    font-weight: $primaryfontweight;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-bottom-color: #DDDDDD;
+}
+label{
+    margin-bottom: 0;
+    font-weight: 400;
 }

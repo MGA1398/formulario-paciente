@@ -31,24 +31,17 @@ header{
 }
 .container{
     position: relative;
-    input{
+    form.busquedaform{
+        text-decoration: none;
+        mat-form-field{
+        input{
+            width: 335px auto;
+        }
         text-align: justify;
         border: none;
         border-radius: 25px;
         box-sizing: border-box;
-        width: 335px auto;
-        height: 32px;
-        background-image: url("../../assets/images/search.png");
-        background-position: 6px 7px;
-        background-repeat: no-repeat;
-        padding-left: 20pt;
-        -webkit-transition: width 0.3s ease-out;
-        transition: width 0.3s ease-out;
-        z-index: 2;
-        
-    }
-    input:focus{
-        width: 75%;
+        }
     }
     button{
         

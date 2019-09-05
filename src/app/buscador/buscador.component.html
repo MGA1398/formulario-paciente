@@ -4,8 +4,18 @@
         <p class="mx-auto busqueda">Búsqueda</p>
     </div>
     <section class="d-flex container">
-            <input type="text" id="search" placeholder="Busca entre tus pacientes">
+        <form class="busquedaform">
+            <mat-form-field class="busqueda">
+            <input type="text" class="buscador" id="search" placeholder="Busca entre tus pacientes" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        </form>
             <button onclick="document.getElementById('search').value = ''">Cancelar</button>
     </section>
 </header>
+
  
