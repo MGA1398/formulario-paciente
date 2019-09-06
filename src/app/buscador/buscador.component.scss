@@ -3,57 +3,80 @@
 ::placeholder{
     color: rgba(221, 221, 221, 1);
 }
-header{
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
+nav{
     background: $primary;
-    padding-top: 2em 0;
-    padding-bottom: 5px;
     font-size: $primaryfontsize;
+    z-index: 2;
     .head{
-        text-align: center;
-        margin-top: 15px;
-        margin-bottom: 5px;
-        p{
-            color: #FFFFFF;
-            font-weight: 500;
-            font-family: $primaryfontfam;
-            padding-right: 40px;
-        }
+        align-content: space-between;
+        color: #FFFFFF;
+        font-weight: 500;
+        font-family: $primaryfontfam;
         img{
             float: left;
             width: 20px;
-            margin-left: 15px;
         }
     }
 }
 .container{
-    position: relative;
-    form.busquedaform{
-        text-decoration: none;
-        mat-form-field{
-        input{
-            width: 335px auto;
-        }
-        text-align: justify;
-        border: none;
-        border-radius: 25px;
-        box-sizing: border-box;
-        }
+    background-color: $primary;
+    z-index: 1;
+    .busqueda{
+        background-color: white;
+        border-radius: 25%;
+        width: 115%;
     }
-    button{
-        
-        position: absolute;
-        right: 10px;
-        margin-top: 5px;
-        border: none;
-        color: #FFFFFF;
-        font-weight: 500;
-        font-family: $primaryfontfam;
-        background-color: $primary;
-        z-index: 1;
+}
+
+::ng-deep .mat-form-field{
+    .mat-input-element {
+        color: #3B3F48;
     }
-    
+    .mat-form-field-label {
+        color: #A0AAAD!important;
+    }
+    .mat-form-field-underline {
+        background-color: white;
+    }
+    .mat-form-field-ripple {
+        background-color: white;
+    }
+    .mat-form-field-required-marker {
+        color: white;
+    }
+}
+
+::ng-deep .mat-form-field.mat-focused{
+    .mat-form-field-label {
+    color: white!important;
+    }
+    .mat-form-field-ripple {
+        background-color: white;
+    }
+    .mat-form-field-required-marker {
+        color: white;
+    }
+    .mat-input-element {
+        color: #3B3F48;
+    }
+}
+::ng-deep .mat-form-field.mat-form-field-invalid{
+    .mat-input-element {
+        color: #3B3F48;
+    }
+    .mat-form-field-label {
+        color: white!important;
+    }
+    .mat-form-field-label .mat-form-field-required-marker {
+        color: white;
+    }
+    .mat-form-field-ripple {
+        background-color: white;
+    }
+}
+button{
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: $primaryfontfam;
+    background-color: $primary;
 }
