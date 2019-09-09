@@ -14,7 +14,6 @@ $primaryfontweight: 400;
 header{
     background: $primary;
     padding: 3px;
-    align-content: flex-end;
     a{
         color: white;
         &:hover{
@@ -35,6 +34,9 @@ body{
     font-family: $primaryfontfam;
     color: $bodyc;
     font-weight: normal;
+    div.parent{
+        padding: 1em;
+    }
     input{
         border: solid $inputc;
         border-width: 2px;

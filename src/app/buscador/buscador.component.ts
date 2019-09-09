@@ -12,6 +12,14 @@ export class BuscadorComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['Matias', 'Carolina', 'Andrea', 'Pedro'];
   filteredOptions: Observable<string[]>;
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+  cancelStep() {
+    this.step--;
+  }
 
   constructor() { }
 

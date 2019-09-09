@@ -5,35 +5,24 @@
 }
 nav{
     background: $primary;
-    font-size: $primaryfontsize;
-    z-index: 2;
-    .head{
-        align-content: space-between;
+    text-align: center;
+    P{
         color: #FFFFFF;
         font-weight: 500;
         font-family: $primaryfontfam;
-        img{
-            float: left;
-            width: 20px;
-        }
     }
 }
-.container{
-    background-color: $primary;
-    z-index: 1;
-    .busqueda{
-        background-color: white;
-        border-radius: 25%;
-        width: 115%;
-    }
+.mat-expansion-panel{
+    background-color: $primary !important;
 }
 
 ::ng-deep .mat-form-field{
+    background-color: white;
     .mat-input-element {
         color: #3B3F48;
     }
     .mat-form-field-label {
-        color: #A0AAAD!important;
+        color: #A0AAAD;
     }
     .mat-form-field-underline {
         background-color: white;

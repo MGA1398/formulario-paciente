@@ -1,18 +1,22 @@
 @import 'src/styles';
 
 nav{
-    div.container{
-        background: $primary;
-        p{
-            color: rgba(255, 255, 255, 1);
-            font-weight: 500;
-            font-family: $primaryfontfam;
-            font-size: $primaryfontsize;
-        }
-        img{
-            width: 15px;
-        }
+    background: $primary;
+    text-align: center;
+    height: 64px;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    p{
+        color: rgba(255, 255, 255, 1);
+        font-weight: 500;
+        font-family: $primaryfontfam;
+        font-size: $primaryfontsize;
     }
+    img{
+        width: 15px;
+    }
+
 }
 section.container{
     img{
