@@ -5,19 +5,32 @@
 }
 nav{
     background: $primary;
-    text-align: center;
+    height: 64px;
+    a{
+        padding-top: 35px;
+    }
     P{
         color: #FFFFFF;
         font-weight: 500;
+        font-size: $primaryfontsize;
         font-family: $primaryfontfam;
+        padding-top: 35px;
+    }
+    button{
+        padding-top: 33px;
     }
 }
-.mat-expansion-panel{
+.container{
     background-color: $primary !important;
+}
+.buscador{
+    height: 32px;
+    border-radius: 25px; 
 }
 
 ::ng-deep .mat-form-field{
     background-color: white;
+    height: 32px;
     .mat-input-element {
         color: #3B3F48;
     }
@@ -60,7 +73,7 @@ nav{
         color: white;
     }
     .mat-form-field-ripple {
-        background-color: white;
+        background-color: $primary;
     }
 }
 button{

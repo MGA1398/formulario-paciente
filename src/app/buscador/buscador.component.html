@@ -1,22 +1,25 @@
-<nav class="d-flex">
-    <a class="flex-fill text-decoration-none float-left d-inline-block test" routerLink="/informacion">
-        <mat-icon class="p-2 m-2">menu</mat-icon>
+<nav class="d-flex justify-content-between">
+    <a class= "px-3 text-decoration-none test" routerLink="/informacion">
+        <mat-icon class="menu" [ngStyle]="{'color':'white'}">menu</mat-icon>
     </a>
-    <p class="flex-fill p-2 m-2 d-inline-block paciente">Pacientes</p>
-    <mat-expansion-panel class="mat-elevation-z0 flex-fill" [expanded]="step == 1" (opened)="setStep(1)" hideToggle>
-        <mat-expansion-panel-header [collapsedHeight]="'30px'" [expandedHeight]="'50px'">
-            <mat-panel-title>
-                <mat-icon class="p-2 m-2">search</mat-icon>
-            </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-form-field class="p-2 m-2 border border-0 search">
-            <input type="text" class="p-0 buscador" id="search" placeholder="Busca entre tus pacientes" matInput [formControl]="myControl" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                    {{option}}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-        <button class="border border-0 ml-auto" onclick="document.getElementById('search').value = ''" (click)="cancelStep()">Cancelar</button>
-    </mat-expansion-panel>
+    <p class="paciente">Pacientes</p>
+    <button ng-show="!selectItem='zero" type="button" class="px-3 border border-0" (click)="selectItem='one'" data-toggle="collapse" data-target="#demo1"> <mat-icon [ngStyle]="{'color':'white'}">search</mat-icon></button>
+    
 </nav>
+<section>
+<div class="container py-1">
+    <div id="demo1" class="collapse" [ngClass]="{'show':selectItem=='one'}">
+        <div class="d-flex d-block font-weight-bold look">
+            <mat-form-field class="flex-grow-1 rounded-lg border border-0 search">
+                <input type="text" class="rounded-lg pl-1 buscador" id="search" matInput placeholder="Busca entre tus pacientes" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+            <button class="border border-0 float-right clear" onclick="document.getElementById('search').value = ''" (click)="selectItem='zero'">Cancelar</button>
+        </div>
+    </div>
+</div>
+</section>
