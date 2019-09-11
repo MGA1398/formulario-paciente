@@ -7,11 +7,11 @@
     
 </nav>
 <section>
-<div class="container py-1">
+<div class="container">
     <div id="demo1" class="collapse" [ngClass]="{'show':selectItem=='one'}">
-        <div class="d-flex d-block font-weight-bold look">
-            <mat-form-field class="flex-grow-1 rounded-lg border border-0 search">
-                <input type="text" class="rounded-lg pl-1 buscador" id="search" matInput placeholder="Busca entre tus pacientes" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <div class="d-flex ">
+            <mat-form-field class="search1" [ngStyle]="{'font-size.px': size}">
+                <input type="text" id="search" matInput placeholder="Busca entre tus pacientes" matInput [formControl]="myControl" [matAutocomplete]="auto">
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                         {{option}}
@@ -23,3 +23,18 @@
     </div>
 </div>
 </section>
+
+<a (click)=details();>
+        <div class="d-flex">
+                <div class="m-2">
+                        <img src="assets/images/profilepic.svg" style="width: 50px"/>
+                </div>
+                <div class="col d-flex flex-column justify-content-center">
+                        <label>Hola </label>
+                        <span>123456</span>           
+            </div>
+        </div>
+</a>
+
+<mat-divider></mat-divider>
+

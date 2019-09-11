@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscador',
@@ -9,10 +10,11 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./buscador.component.scss']
 })
 export class BuscadorComponent implements OnInit {
-  myControl = new FormControl();
-  options: string[] = ['Matias', 'Carolina', 'Andrea', 'Pedro'];
-  filteredOptions: Observable<string[]>;
-  step = 0;
+  public myControl = new FormControl();
+  public options: string[] = ['Matias', 'Carolina', 'Andrea', 'Pedro'];
+  public filteredOptions: Observable<string[]>;
+  public step = 0;
+  public size = 15;
 
   setStep(index: number) {
     this.step = index;
@@ -21,7 +23,7 @@ export class BuscadorComponent implements OnInit {
     this.step--;
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -35,4 +37,8 @@ export class BuscadorComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
+  private details(): void {
+  //  const val =  this.router.navigate(['informacion'], { queryParams: { id: 'gris', cantidad: 439 } });
+  this.router.navigate(['/informacion', 'gris']);
+  }
 }

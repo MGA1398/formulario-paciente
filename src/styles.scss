@@ -44,9 +44,7 @@ body{
         box-sizing: border-box;
     }
     mat-form-field{
-        border: solid $inputc;
-        border-width: 2px;
-        border-radius: 4%;
+        border: 0 solid transparent !important;
     }
 }
 h1{
@@ -66,4 +64,22 @@ section{
 label{
     margin-bottom: 0;
     font-weight: 400;
+}
+
+
+
+.search1 {
+    font-size: 15px;
+    margin: 15px 0;
+    width: 100%;
+    height: 45px;
+    border-radius: 18px;
+    .mat-form-field-infix { text-indent: 10px; }
+    .mat-form-field .mat-form-field-underline {
+        background-color: transparent !important;
+    }
+    
+    .mat-form-field-infix {
+    border-top: 8px solid transparent !important;
+    }
 }

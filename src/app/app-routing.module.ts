@@ -5,8 +5,9 @@ import { BuscadorComponent } from './buscador/buscador.component';
 
 
 const routes: Routes = [
-  {path : 'informacion', component: InformacionComponent},
-  {path : 'buscador', component: BuscadorComponent}
+  {path : 'informacion/:id', component: InformacionComponent},
+  {path : 'buscador', component: BuscadorComponent},
+  {path : '', component: BuscadorComponent}
 ];
 
 @NgModule({

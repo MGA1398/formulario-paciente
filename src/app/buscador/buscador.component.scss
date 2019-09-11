@@ -22,15 +22,11 @@ nav{
 }
 .container{
     background-color: $primary !important;
-}
-.buscador{
-    height: 32px;
-    border-radius: 25px; 
+   
 }
 
 ::ng-deep .mat-form-field{
     background-color: white;
-    height: 32px;
     .mat-input-element {
         color: #3B3F48;
     }
@@ -38,7 +34,7 @@ nav{
         color: #A0AAAD;
     }
     .mat-form-field-underline {
-        background-color: white;
+        background-color: transparent;
     }
     .mat-form-field-ripple {
         background-color: white;
@@ -53,7 +49,7 @@ nav{
     color: white!important;
     }
     .mat-form-field-ripple {
-        background-color: white;
+        background-color: transparent;
     }
     .mat-form-field-required-marker {
         color: white;
