@@ -41,4 +41,10 @@ export class BuscadorComponent implements OnInit {
   //  const val =  this.router.navigate(['informacion'], { queryParams: { id: 'gris', cantidad: 439 } });
   this.router.navigate(['/informacion', 'gris']);
   }
+  private details1(): void {
+    this.router.navigate(['/informacion', 'azul']);
+  }
+  private details2(): void {
+    this.router.navigate(['/informacion', 'norm']);
+  }
 }

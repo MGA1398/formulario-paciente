@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component ({
   selector: 'app-informacion',
@@ -15,7 +15,7 @@ export class InformacionComponent implements OnInit {
   public flagType: string;
   public pacienteForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute) { }
+  constructor(private fb: FormBuilder, private activatedRoute: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
 
@@ -37,9 +37,7 @@ export class InformacionComponent implements OnInit {
       }),
     });
     // this.flagType = this.activatedRoute.snapshot.queryParamMap.get('id');
-    const val = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log(val);
-    console.log(this.flagType);
+    this.flagType = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
   onSubmit() {
