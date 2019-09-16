@@ -1,0 +1,83 @@
+@import 'src/styles';
+
+.head{
+    padding-bottom: 5.5px;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #F8F5F5;
+    div{
+        .fotodr{
+            width: 41px;
+            height: 41px;
+            border-radius:100%;
+            margin-right: 10px;
+        }
+        span{
+            font-family: $primaryfontfam;
+            color: $bodyc;
+            font-weight: normal;
+            padding-top: 0.55em;
+            padding-right: 6em;
+        }
+    }
+}
+.button:active {
+    background: none;
+}
+  
+.container{
+    .cita{
+        border-bottom: 3px solid #FA0A80;
+    }
+}
+.consultorio{
+    label{
+        color: #3B3F48;
+        padding-bottom: 0.5em;
+    }
+    select{
+        color: #A0AAAD;
+
+    }
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
+    height: 44px;
+    border: 2px solid #E8E9EB;
+    border-radius: 5px;
+    padding-left: 1em;
+    padding-top: 0.8em;
+    margin-right: -1em;
+
+}
+::ng-deep .mat-form-field{
+    background-color: white;
+    width: 334px;
+    .mat-input-element {
+        color: #3B3F48;
+    }
+    .mat-form-field-label {
+        color: #A0AAAD;
+    }
+    .mat-form-field-underline {
+        background-color: transparent;
+    }
+    .mat-form-field-ripple {
+        background-color: white;
+    }
+    .mat-form-field-required-marker {
+        color: white;
+    }
+}
+::ng-deep .mat-form-field.mat-focused{
+    .mat-form-field-label {
+    color: white!important;
+    }
+    .mat-form-field-ripple {
+        background-color: transparent;
+    }
+    .mat-form-field-required-marker {
+        color: white;
+    }
+    .mat-input-element {
+        color: #3B3F48;
+    }
+}

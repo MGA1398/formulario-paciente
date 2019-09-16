@@ -65,9 +65,6 @@ label{
     margin-bottom: 0;
     font-weight: 400;
 }
-
-
-
 .search1 {
     font-size: 15px;
     margin: 15px 0;
@@ -83,3 +80,21 @@ label{
     border-top: 8px solid transparent !important;
     }
 }
+.mat-bottom-sheet-container{
+    height: 613px;
+    
+}
+.my-centered-dialog {
+    max-width: 80vw;
+  
+    .mat-dialog-container {
+      height: 665px;
+      width: 378px;
+      border-radius: 15px;
+      margin-bottom: -135px;
+      margin-left: -40px;
+      margin-right: -40px;
+      padding: 0;
+
+    }
+  }

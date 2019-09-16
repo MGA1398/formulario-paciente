@@ -12,13 +12,15 @@ import {MatMenuModule} from '@angular/material/menu';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
+import {NuevaCita} from './agendar-cita/nueva-cita';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     InformacionComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    NuevaCita
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,7 @@ import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
   ],
+  entryComponents: [NuevaCita],
   providers: [
     {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue : {float: 'never'}}
   ],
