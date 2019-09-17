@@ -15,15 +15,11 @@
             font-family: $primaryfontfam;
             color: $bodyc;
             font-weight: normal;
-            padding-top: 0.55em;
-            padding-right: 6em;
+            font-size: 13px;
+            padding-top: 1em;
         }
     }
-}
-.button:active {
-    background: none;
-}
-  
+} 
 .container{
     .cita{
         border-bottom: 3px solid #FA0A80;
@@ -34,23 +30,25 @@
         color: #3B3F48;
         padding-bottom: 0.5em;
     }
-    select{
+    .mat-form-field{
+        width: 100%;
+        font-size: $primaryfontweight;
+    }
+    .myclass{
+        font-family: $primaryfontfam;
+    }
+    .mat-select{
         color: #A0AAAD;
-
     }
 }
+::ng-deep .mat-select-arrow {border: none}
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
     height: 44px;
     border: 2px solid #E8E9EB;
-    border-radius: 5px;
-    padding-left: 1em;
-    padding-top: 0.8em;
-    margin-right: -1em;
-
+    border-radius: 8px;
 }
 ::ng-deep .mat-form-field{
     background-color: white;
-    width: 334px;
     .mat-input-element {
         color: #3B3F48;
     }
@@ -59,12 +57,13 @@
     }
     .mat-form-field-underline {
         background-color: transparent;
+        margin-bottom: 5px;
     }
     .mat-form-field-ripple {
-        background-color: white;
+        background-color: transparent;
     }
     .mat-form-field-required-marker {
-        color: white;
+        color: transparent;
     }
 }
 ::ng-deep .mat-form-field.mat-focused{
@@ -75,7 +74,7 @@
         background-color: transparent;
     }
     .mat-form-field-required-marker {
-        color: white;
+        color: transparent;
     }
     .mat-input-element {
         color: #3B3F48;

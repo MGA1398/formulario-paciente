@@ -1,24 +1,27 @@
 <section class="head">
-    <div class="d-flex justify-content-between pl-4 pr-1 pt-2 menu">
-        <img src="assets/images/profilepic.jpg" alt="Foto Doctor" class="mr-1 fotodr">
+    <div class="d-flex pl-4 pt-2 menu">
+        <img src="assets/images/profilepic.jpg" alt="Foto Doctor" class="fotodr">
         <span class="nombre">Dr. Carlos Salvador</span>
-        <button  mat-button (click)="closeMe()" class="px-3 border border-0"><mat-icon>close</mat-icon></button>
+        <button  mat-button (click)="closeMe()" class="px-3 ml-auto border border-0"><mat-icon>close</mat-icon></button>
                 
     </div>
 </section>
-<section class="border-bottom-0 container">
+<section class="border-bottom-0 container" cdk-focus-start>
     <div class="py-3 border border-top-0 border-left-0 border-right-0">
     <span class="pb-3 cita"><strong>Nueva Cita</strong></span>
     </div>    
     <div class="pt-4 consultorio">
-        <label>Primero selecciona un consultorio:</label>
+        <label>Primero selecciona un consultorio:</label><br>
+        <div dir="ltr">
         <mat-form-field>
-            <select matNativeControl required>
-                <option hidden [value]=""  selected>Selecciona un consultorio</option>
-                <option value="Centro Médico Centrimed">Centro Médico Centrimed</option>
-                <option value="Hospital Metropolitano">Hospital Metropolitano</option>
-                <option value="Centro Médico Citimed">Centro Médico Citimed</option>
-            </select>
+            <mat-placeholder class="myclass">Selecciona un consultorio</mat-placeholder>
+            <mat-icon class="float-right mr-2">keyboard_arrow_down</mat-icon>
+            <mat-select>
+                <mat-option *ngFor="let consultorio of consultorios" [value]="consultorio.value">
+                    {{consultorio.viewValue}}
+                  </mat-option>
+            </mat-select>
         </mat-form-field>
+        </div>
     </div>
 </section>

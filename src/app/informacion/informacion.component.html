@@ -1,6 +1,6 @@
-<nav class="sticky-top">
+<nav class="sticky-top" style="z-index: 11;">
         <a class="text-decoration-none float-left d-inline-block test" routerLink="/buscador">
-        <img class="arrow" src="assets/images/arrow-left-white.svg" alt="Arrow"></a>
+                <mat-icon [ngStyle]="{'color':'white'}" style="font-size: 30px !important" class="atras">keyboard_arrow_left</mat-icon></a>
         <p class="d-inline-block title">Paciente</p>
 </nav>
 <section *ngIf= "this.flagType === 'gris'" style="background-color: #FFE3E1; border-bottom: 1px solid #F7C0BC; z-index: 10" class="position-fixed alerta">
@@ -21,7 +21,7 @@
 
         </div>
 </section>
-<div class="parent" style="z-index: 1">
+<div class="parent" style="z-index: 1" cdk-focus-start>
         <div *ngIf= "this.flagType !== 'norm'" style="margin-top: 64px"></div>
         <section class="m-auto pb-3 container">
                 <div class="d-flex">

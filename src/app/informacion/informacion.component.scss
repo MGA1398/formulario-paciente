@@ -2,6 +2,7 @@
 
 nav{
     background: $primary;
+    z-index: 11;
     text-align: center;
     height: 64px;
     padding-top: 2em;
@@ -19,7 +20,7 @@ nav{
 
 }
 .alerta{
-    height: 53px;
+    height: 53px auto;
     font-family: $primaryfontfam;
     font-size: $primaryfontweight;
     color: #3B3F48;
