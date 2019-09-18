@@ -6,17 +6,16 @@
                 
     </div>
 </section>
-<section class="border-bottom-0 container" cdk-focus-start>
+<section class="border-bottom-0 container">
     <div class="py-3 border border-top-0 border-left-0 border-right-0">
     <span class="pb-3 cita"><strong>Nueva Cita</strong></span>
     </div>    
     <div class="pt-4 consultorio">
         <label>Primero selecciona un consultorio:</label><br>
         <div dir="ltr">
-        <mat-form-field>
-            <mat-placeholder class="myclass">Selecciona un consultorio</mat-placeholder>
+        <mat-form-field class="search text-left">
             <mat-icon class="float-right mr-2">keyboard_arrow_down</mat-icon>
-            <mat-select>
+            <mat-select placeholder="Selecciona un consultorio" (click)="showOptions()">
                 <mat-option *ngFor="let consultorio of consultorios" [value]="consultorio.value">
                     {{consultorio.viewValue}}
                   </mat-option>

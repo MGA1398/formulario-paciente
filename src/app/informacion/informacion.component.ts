@@ -20,15 +20,11 @@ export class InformacionComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private bottomSheet: MatBottomSheet,
               private activatedRoute: ActivatedRoute, public router: Router, public dialog: MatDialog) { }
-
-  showBottomSheet() {
-    this.bottomSheet.open(NuevaCita, {panelClass: 'p-0'});
-  }
   openDialog(): void {
     // tslint:disable-next-line: no-use-before-declare
     const dialogRef = this.dialog.open(NuevaCita, {
       panelClass: 'my-centered-dialog',
-      width: '512px'});
+      width: '512px', autoFocus: false});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

@@ -34,18 +34,13 @@
         width: 100%;
         font-size: $primaryfontweight;
     }
-    .myclass{
-        font-family: $primaryfontfam;
-    }
-    .mat-select{
-        color: #A0AAAD;
-    }
 }
 ::ng-deep .mat-select-arrow {border: none}
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
     height: 44px;
     border: 2px solid #E8E9EB;
     border-radius: 8px;
+    font-family: $primaryfontfam !important;
 }
 ::ng-deep .mat-form-field{
     background-color: white;
@@ -53,7 +48,10 @@
         color: #3B3F48;
     }
     .mat-form-field-label {
+        padding-left: 1em;
+        padding-top: 0.3em;
         color: #A0AAAD;
+        font-size: $primaryfontsize;
     }
     .mat-form-field-underline {
         background-color: transparent;
