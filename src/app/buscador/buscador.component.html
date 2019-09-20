@@ -6,7 +6,6 @@
     <button ng-show="!selectItem='zero" type="button" class="px-3 border border-0" (click)="selectItem='one'" data-toggle="collapse" data-target="#demo1"> <mat-icon [ngStyle]="{'color':'white'}">search</mat-icon></button>
     
 </nav>
-<section>
 <div class="container">
     <div id="demo1" class="collapse" [ngClass]="{'show':selectItem=='one'}">
         <div class="d-flex ">
@@ -22,8 +21,6 @@
         </div>
     </div>
 </div>
-</section>
-
 <div *ngFor="let option of filteredOptions | async" [id]='options'>
     <div *ngIf= "this.option === 'Gris' || ''">
     <a (click)=details(); id="gris">
