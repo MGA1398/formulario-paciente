@@ -16,7 +16,7 @@
         <mat-form-field class="search text-left">
             <mat-icon class="float-right mr-2">keyboard_arrow_down</mat-icon>
             <mat-select placeholder="Selecciona un consultorio" (click)="showOptions()">
-                <mat-option *ngFor="let consultorio of consultorios" [value]="consultorio.value">
+                <mat-option *ngFor="let consultorio of consultorios" [value]="consultorio.value" class="py-2 opciones">
                     {{consultorio.viewValue}}
                   </mat-option>
             </mat-select>

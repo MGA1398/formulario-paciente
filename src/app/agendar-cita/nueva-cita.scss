@@ -35,6 +35,14 @@
         font-size: $primaryfontweight;
     }
 }
+::ng-deep .mat-option{
+    min-width: 285px !important; 
+    height: 70px !important;
+    border-bottom: 1px solid #E8E9EB !important;
+    background-color: white !important;
+    font-size: 15px !important;
+    font-family: $primaryfontfam !important;
+}
 ::ng-deep .mat-select-arrow {border: none}
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix{
     height: 44px;
@@ -77,4 +85,12 @@
     .mat-input-element {
         color: #3B3F48;
     }
+}
+::ng-deep .cdk-overlay-backdrop.cdk-overlay-backdrop-showing{
+    opacity: 1 !important;
+    background: rgba(0,0,0,0.4) !important;
+}
+::ng-deep .mat-select-panel{
+    box-shadow: none !important;
+    border-radius: 15px;
 }

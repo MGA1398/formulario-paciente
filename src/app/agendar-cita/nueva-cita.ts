@@ -26,7 +26,6 @@ export class NuevaCita {
   }
   public showOptions() {
     const cdk = document.getElementsByClassName('cdk-overlay-pane') as HTMLCollectionOf<HTMLElement>;
-    cdk[1].style.minWidth = '285px'; cdk[1].style.padding = '1em';
     console.log(cdk);
   }
   public  closeMe() {

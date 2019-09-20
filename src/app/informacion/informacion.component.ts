@@ -17,7 +17,6 @@ export class InformacionComponent implements OnInit {
   public selected = '+593';
   public flagType: string;
   public pacienteForm: FormGroup;
-
   constructor(private fb: FormBuilder, private bottomSheet: MatBottomSheet,
               private activatedRoute: ActivatedRoute, public router: Router, public dialog: MatDialog) { }
   openDialog(): void {
@@ -25,13 +24,11 @@ export class InformacionComponent implements OnInit {
     const dialogRef = this.dialog.open(NuevaCita, {
       panelClass: 'my-centered-dialog',
       width: '512px', autoFocus: false});
-
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
   ngOnInit() {
-
     this.pacienteForm = this.fb.group({
       primerNombre: ['', Validators.required],
       segundoNombre: [''],
@@ -52,26 +49,9 @@ export class InformacionComponent implements OnInit {
     // this.flagType = this.activatedRoute.snapshot.queryParamMap.get('id');
     this.flagType = this.activatedRoute.snapshot.paramMap.get('id');
   }
-
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.pacienteForm.value);
   }
 
 }
-
-// @Component ({
-//   selector: 'app-dialog-example',
-//   templateUrl: 'dialog-example.html',
-// })
-// // tslint:disable-next-line: component-class-suffix
-// export class DialogExample {
-
-//   constructor(
-//     public dialogRef: MatDialogRef<DialogExample>) {}
-
-//   onNoClick(): void {
-//     this.dialogRef.close();
-//   }
-
-// }

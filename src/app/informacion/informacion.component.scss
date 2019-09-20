@@ -2,13 +2,12 @@
 
 nav{
     background: $primary;
-    z-index: 11;
-    text-align: center;
     height: 64px;
     padding-top: 2em;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
     p{
+        padding-right: 2em;
         color: rgba(255, 255, 255, 1);
         font-weight: 500;
         font-family: $primaryfontfam;
@@ -43,10 +42,12 @@ section.container{
     }
     button{
         background-color: $primary;
+        font-family: $primaryfontfam;
         font-weight: 500;
         font-size: 18px;
         color: white;
         border-radius: 25px;
+        outline: none;
     }
 }
 section.info_personal{
