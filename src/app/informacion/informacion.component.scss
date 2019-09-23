@@ -2,8 +2,7 @@
 
 nav{
     background: $primary;
-    height: 64px;
-    padding-top: 2em;
+    height: 46px;
     padding-left: 1em;
     padding-right: 1em;
     p{
@@ -13,10 +12,6 @@ nav{
         font-family: $primaryfontfam;
         font-size: $primaryfontsize;
     }
-    img{
-        width: 15px;
-    }
-
 }
 .alerta{
     height: 53px auto;
@@ -47,7 +42,7 @@ section.container{
         font-size: 18px;
         color: white;
         border-radius: 25px;
-        outline: none;
+        box-shadow: none;
     }
 }
 section.info_personal{

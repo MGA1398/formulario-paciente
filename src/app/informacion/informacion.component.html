@@ -1,10 +1,10 @@
-<nav class="sticky-top d-flex  justify-content-between" style="z-index: 11;">
-        <a class="text-decoration-none test" routerLink="/buscador">
-                <mat-icon [ngStyle]="{'color':'white'}" style="font-size: 30px !important" class="atras">keyboard_arrow_left</mat-icon></a>
+<nav class="sticky-top d-flex pt-3 justify-content-between" style="z-index: 11;">
+        <a class="test" routerLink="/buscador">
+                <mat-icon [ngStyle]="{'color':'white'}" class="atras">keyboard_arrow_left</mat-icon></a>
         <p class="title">Paciente</p>
         <div></div>
 </nav>
-<section *ngIf= "this.flagType === 'gris'" style="background-color: #FFE3E1; border-bottom: 1px solid #F7C0BC; z-index: 10" class="position-fixed alerta">
+<section *ngIf= "this.flagType === 'gris'" style="background-color: #FFE3E1; border-bottom: 1px solid #F7C0BC; z-index: 10; width: 100%;" class="position-fixed alerta">
         <div class="d-flex align-items-center">
                 <div class="m-2">
                         <img src="assets/images/caution.svg" alt="warning">
@@ -13,7 +13,7 @@
 
         </div>
 </section>
-<section *ngIf= "this.flagType === 'azul'" style="background-color: #F8F5F5; border-bottom: 1px solid #DDDDDD; z-index: 10" class="position-fixed alerta">
+<section *ngIf= "this.flagType === 'azul'" style="background-color: #F8F5F5; border-bottom: 1px solid #DDDDDD; z-index: 10; width: 100%" class="position-fixed alerta">
         <div class="d-flex align-items-center">
                 <div class="m-2">
                         <img src="assets/images/edit.svg" alt="edit">
@@ -23,7 +23,7 @@
         </div>
 </section>
 <div class="parent" style="z-index: 1" cdk-focus-start>
-        <div *ngIf= "this.flagType !== 'norm'" style="margin-top: 64px"></div>
+        <div *ngIf= "this.flagType !== 'norm'" style="margin-top: 55px"></div>
         <section class="m-auto pb-3 container">
                 <div class="d-flex">
                         <div class="row mx-auto">
@@ -39,7 +39,7 @@
                 <section class="pt-3 info_personal">
                 <h3 class="pt-1 font-weight-bold">Información Personal</h3>
                 <div class="row">
-                        <div class="mt-2 col-sm-6">
+                        <div class="mt-3 col-sm-6">
                         <label for="primerNombre">Primer nombre</label><br>
                         <input type="text" class="rounded-lg py-2 px-2 form-input" id="primerNombre" name="primerNombre" placeholder="Luciana" formControlName="primerNombre" required>
                         </div>
@@ -58,11 +58,11 @@
                 </div>
                 <p class="m-4 text-center cambio">¿Necesitas cambiar estos datos?<br> Por favor envíanos un <a href="#">correo</a></p>
                 </section>
-                <section class="py-3 masinfo">
+                <section class="pb-3 masinfo">
                         <div formGroupName="masinfo">
                         <div class="row">
-                        <div class="col-sm-6">
-                                <label for="mt-3 cedula">Cédula</label><br>
+                        <div class="mt-3 col-sm-6">
+                                <label for="mt-1 cedula">Cédula</label><br>
                                 <input type="number" class="rounded-lg py-2 px-2 form-input" id="cedula" name="cedula" placeholder="1713092255" formControlName="cedula" required>
                         </div>
                         <div class="mt-3 col-sm-6">
@@ -80,7 +80,7 @@
                         <div formGroupName="contacto">
                         <h3 class="font-weight-bold">Información de Contacto</h3>
                         <div class="row">
-                        <div class="mt-2 col-sm-6">
+                        <div class="mt-3 col-sm-6">
                                 <label for="mt-1 pais">País</label><br>
                                 <input type="text" class="rounded-lg py-2 px-2 form-input" id="pais" name="pais" placeholder="Ecuador" formControlName="pais">
                         </div>

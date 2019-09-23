@@ -11,7 +11,7 @@ import { Route, Router } from '@angular/router';
 })
 export class BuscadorComponent implements OnInit {
   public myControl = new FormControl();
-  public options: string[] = ['Gris', 'Azul', 'Basico', ];
+  public options: string[] = ['gris', 'azul', 'basico', ];
   public filteredOptions: Observable<string[]>;
   public step = 0;
   public size = 15;
