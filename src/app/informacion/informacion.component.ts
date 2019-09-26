@@ -6,6 +6,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import {MatBottomSheet} from '@angular/material';
 import {NuevaCita} from '../agendar-cita/nueva-cita';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { HttpClient } from 'selenium-webdriver/http';
+import { DataService } from '../data.service';
+import { Paciente } from '../paciente';
 
 @Component ({
   selector: 'app-informacion',
@@ -17,18 +20,8 @@ export class InformacionComponent implements OnInit {
   public selected = '+593';
   public flagType: string;
   public pacienteForm: FormGroup;
-  constructor(private fb: FormBuilder, private bottomSheet: MatBottomSheet,
-              private activatedRoute: ActivatedRoute, public router: Router, public dialog: MatDialog) { }
-  openDialog(): void {
-    // tslint:disable-next-line: no-use-before-declare
-    const dialogRef = this.dialog.open(NuevaCita, {
-      panelClass: 'my-centered-dialog',
-      width: '512px', autoFocus: false});
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-  ngOnInit() {
+
+  getFormulario() {
     this.pacienteForm = this.fb.group({
       primerNombre: ['', Validators.required],
       segundoNombre: [''],
@@ -46,6 +39,23 @@ export class InformacionComponent implements OnInit {
         celular: [''],
       }),
     });
+
+  }
+
+  constructor(private fb: FormBuilder, private bottomSheet: MatBottomSheet,
+              private activatedRoute: ActivatedRoute, public router: Router,
+              public dialog: MatDialog) {}
+  openDialog(): void {
+    // tslint:disable-next-line: no-use-before-declare
+    const dialogRef = this.dialog.open(NuevaCita, {
+      panelClass: 'my-centered-dialog',
+      width: '512px', autoFocus: false});
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  ngOnInit() {
+    this.getFormulario();
     // this.flagType = this.activatedRoute.snapshot.queryParamMap.get('id');
     this.flagType = this.activatedRoute.snapshot.paramMap.get('id');
   }
@@ -53,5 +63,4 @@ export class InformacionComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     console.warn(this.pacienteForm.value);
   }
-
 }

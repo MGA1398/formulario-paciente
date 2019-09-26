@@ -1,0 +1,11 @@
+{
+    "pacientes": [
+      {
+        "id": 1775294538,
+        "nombre": "Sebastian",
+        "apellido": "Rodriguez",
+        "email": "sebastian@ejemplo.com",
+        "address": "Colon"
+      }
+    ]
+}

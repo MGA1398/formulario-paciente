@@ -3,6 +3,9 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import { Route, Router } from '@angular/router';
+import { HttpClient } from 'selenium-webdriver/http';
+import { DataService } from '../data.service';
+import { Paciente } from '../paciente';
 
 @Component({
   selector: 'app-buscador',
@@ -15,6 +18,8 @@ export class BuscadorComponent implements OnInit {
   public filteredOptions: Observable<string[]>;
   public step = 0;
   public size = 15;
+  public pacientes = new Array<Paciente>();
+  public arreglo = [];
 
   setStep(index: number) {
     this.step = index;
@@ -22,13 +27,17 @@ export class BuscadorComponent implements OnInit {
   cancelStep() {
     this.step--;
   }
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, public datService: DataService) {}
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''), map(value => this._filter(value))
     );
+    this.getInformacion();
+  }
+
+  public getInformacion() {
+    this.datService.getPacientes().subscribe(response => { this.arreglo = response; console.log(response); });
   }
 
   private _filter(value: string): string[] {

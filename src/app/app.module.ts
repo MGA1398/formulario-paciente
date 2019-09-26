@@ -13,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 import {NuevaCita} from './agendar-cita/nueva-cita';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,10 +33,11 @@ import {NuevaCita} from './agendar-cita/nueva-cita';
     MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   entryComponents: [NuevaCita],
   providers: [
-    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue : {float: 'never'}}
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue : {float: 'never'}},
   ],
   bootstrap: [AppComponent]
 })
