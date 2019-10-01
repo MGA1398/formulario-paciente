@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable, pipe} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -6,8 +6,9 @@ import { Route, Router } from '@angular/router';
 import { HttpClient } from 'selenium-webdriver/http';
 import { DataService } from '../data.service';
 import { Paciente } from '../paciente';
+import { MenuComponent } from '../menu/menu.component';
 import {Pipe, PipeTransform} from '@angular/core';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { ToggleService } from '../toggle.service';
 
 @Component({
   selector: 'app-buscador',
@@ -16,15 +17,15 @@ import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 })
 export class BuscadorComponent implements OnInit {
   public myControl = new FormControl();
-  public miControl = new FormControl();
   public options: string[] = ['sebastian', 'paul', 'sofia', ];
   public filteredOptions: Observable<string[]>;
-  public filteredArreglos: Observable<any[]>;
   public step = 0;
   public size = 15;
   public pacientes = new Array<Paciente>();
   public arreglos: any[];
   searchText = [];
+  public search: any = '';
+  MenuIsOpened = false;
 
   setStep(index: number) {
     this.step = index;
@@ -32,16 +33,18 @@ export class BuscadorComponent implements OnInit {
   cancelStep() {
     this.step--;
   }
-  constructor(private router: Router, private datService: DataService) {}
+  constructor(private router: Router, private datService: DataService, private toggleService: ToggleService) {}
 
   ngOnInit() {
+    this.MenuIsOpened = true;
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''), map(value => this._filter(value))
     );
     this.getInformacion();
-    this.filteredArreglos = this.miControl.valueChanges.pipe(
-      startWith(''), map(value => this._filtro(value))
-    );
+  }
+  toggleSidenav() {
+    this.toggleService.toggle();
+    console.log('Funciona');
   }
 
   public getInformacion() {
@@ -52,12 +55,6 @@ export class BuscadorComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
-
-  private _filtro(value: any): any[] {
-    const filterValue = value.toLowerCase();
-
-    return this.arreglos.filter(arreglo => arreglo.nombre.toLowerCase().includes(filterValue));
   }
 
   private details(): void {

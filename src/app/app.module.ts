@@ -14,6 +14,8 @@ import { BuscadorComponent } from './buscador/buscador.component';
 import { MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
 import {NuevaCita} from './agendar-cita/nueva-cita';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     InformacionComponent,
     BuscadorComponent,
-    NuevaCita
+    NuevaCita,
+    MenuComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
