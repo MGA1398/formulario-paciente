@@ -48,9 +48,9 @@
                     <mat-form-field class="search1" [ngStyle]="{'font-size.px': size}">
                         <input type="text" id="search" matInput placeholder="Busca entre tus pacientes" matInput [formControl]="myControl" [matAutocomplete]="auto">
                         <mat-autocomplete #auto="matAutocomplete">
-                            <!-- <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                                {{option}}
-                            </mat-option> -->
+                            <mat-option *ngFor="let arreglo of arreglos">
+                                {{ arreglo.nombre }}
+                            </mat-option>
                         </mat-autocomplete>
                     </mat-form-field>
                     <button class="border border-0 float-right clear" onclick="document.getElementById('search').value = ''" (click)="selectItem='zero'">Cancelar</button>
@@ -59,50 +59,57 @@
         </div>
 
         <div *ngFor="let option of filteredOptions | async" [id]='options' class="border border-bottom-0">
-            <div *ngIf= "this.option === 'gris' || ''" class="pl-1">
-            <a (click)=details(); id="gris">
+            <div *ngFor="let arreglo of arreglos">
+                <div *ngIf= "this.option === 'sebastian' || ''" class="pl-1">
+                <div *ngIf= "this.arreglo.id === 'sebastian' || ''" class="pl-1">
+                <a (click)=details(); id="sebastian">
+                        <div class="d-flex">
+                                <div class="m-2">
+                                        <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
+                                        <img *ngIf= "this.option === 'sebastian'" src="assets/images/noDoctorisy.svg" class="align-self-end image2" alt="Gris logo">
+                                </div>
+                                <div class="col d-flex flex-column justify-content-center">
+                                        <label>{{ arreglo.nombre }}</label>
+                                        <span>{{ arreglo.ci }}</span>           
+                            </div>
+                        </div>
+                </a>
+                </div>
+                </div>
+
+                <div *ngIf= "this.option === 'paul' || ''" class="pl-1">
+                <div *ngIf= "this.arreglo.id === 'paul' || ''" class="pl-1">
+                <a (click)=details1(); id="paul">
                     <div class="d-flex">
                             <div class="m-2">
                                     <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
-                                    <img *ngIf= "this.option === 'gris'" src="assets/images/noDoctorisy.svg" class="align-self-end image2" alt="Gris logo">
+                                    <img *ngIf= "this.option === 'paul'" src="assets/images/doctorisy.svg" class="align-self-end image2" alt="Azul logo">
                             </div>
                             <div class="col d-flex flex-column justify-content-center">
-                                    <label>{{option}}</label>
-                                    <span>123456</span>           
+                                    <label>{{ arreglo.nombre }}</label>
+                                    <span>{{ arreglo.ci }}</span>           
                         </div>
                     </div>
-            </a>
-            </div>
-
-            <div *ngIf= "this.option === 'azul' || ''" class="pl-1">
-            <a (click)=details1(); id="azul">
-                <div class="d-flex">
-                        <div class="m-2">
-                                <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
-                                <img *ngIf= "this.option === 'azul'" src="assets/images/doctorisy.svg" class="align-self-end image2" alt="Azul logo">
-                        </div>
-                        <div class="col d-flex flex-column justify-content-center">
-                                <label>{{option}} </label>
-                                <span>123456</span>           
-                    </div>
+                </a>
                 </div>
-            </a>
-            </div>
-
-            <div *ngIf= "this.option === 'basico' || ''"  class="pl-1">
-            <a (click)=details2(); id="basico">
-                <div class="d-flex">
-                        <div class="m-2">
-                                <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
-                        </div>
-                        <div class="col d-flex flex-column justify-content-center">
-                                <label>{{option}}</label>
-                                <span>1234567</span>           
-                    </div>
                 </div>
-            </a>
-            </div>
 
+                <div *ngIf= "this.option === 'sofia' || ''"  class="pl-1">
+                <div *ngIf= "this.arreglo.id === 'sofia' || ''" class="pl-1">
+                <a (click)=details2(); id="sofia">
+                    <div class="d-flex">
+                            <div class="m-2">
+                                    <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
+                            </div>
+                            <div class="col d-flex flex-column justify-content-center">
+                                    <label>{{ arreglo.nombre }}</label>
+                                    <span>{{ arreglo.ci }}</span>           
+                        </div>
+                    </div>
+                </a>
+                </div>
+                </div>
+            </div>
             <mat-divider></mat-divider>
         </div>
     </mat-sidenav-content>

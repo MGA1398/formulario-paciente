@@ -12,10 +12,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  public getPacientes(): Observable<Paciente[]>
-  {
+  public getPacientes(): Observable<Paciente[]> {
     const url = 'http://localhost:3000/pacientes';
- 
+
     return this.http.get<Paciente[]>(url);
   }
 }

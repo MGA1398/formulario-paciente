@@ -1,11 +1,28 @@
 {
     "pacientes": [
       {
-        "id": 1775294538,
+		"id": "sebastian",
+        "ci": 1775294538,
         "nombre": "Sebastian",
         "apellido": "Rodriguez",
         "email": "sebastian@ejemplo.com",
         "address": "Colon"
-      }
+      },
+	  {
+		"id": "paul",
+        "ci": 1775285864,
+        "nombre": "Paul",
+        "apellido": "Suarez",
+        "email": "paul@ejemplo.com",
+        "address": "Carolina"
+	  },
+	  {
+		"id": "sofia",
+        "ci": 1778594206,
+        "nombre": "Sofia",
+        "apellido": "Perez",
+        "email": "sofia@ejemplo.com",
+        "address": "Inca"
+	  }
     ]
 }
