@@ -1,5 +1,9 @@
+<mat-sidenav-container class='app-sidenav-container' fullscreen>
+    <mat-sidenav #sidenav class="p-2 sidemenu" mode="side" opened="{{sidenavState | async }}">
+    </mat-sidenav>
+    <mat-sidenav-content>
         <nav class="d-flex justify-content-between">
-            <button class= "px-3 pt-3 text-decoration-none test" mat-button (click)="toggleMenu()">
+            <button class= "px-3 pt-3 text-decoration-none test" mat-button (click)="setSideNavState()">
                 <mat-icon class="menu" [ngStyle]="{'color':'white'}">menu</mat-icon>
             </button>
             <p class="pt-3 paciente" cdk-focus-start>Pacientes</p>
@@ -67,3 +71,5 @@
             </div>
             </div>
         <mat-divider></mat-divider>
+    </mat-sidenav-content>
+</mat-sidenav-container>

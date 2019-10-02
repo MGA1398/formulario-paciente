@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Output, EventEmitter } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable, pipe} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
@@ -25,7 +25,8 @@ export class BuscadorComponent implements OnInit {
   public arreglos: any[];
   searchText = [];
   public search: any = '';
-  MenuIsOpened = false;
+  sideNav: boolean;
+  sidenavState: any = false;
 
   setStep(index: number) {
     this.step = index;
@@ -33,18 +34,22 @@ export class BuscadorComponent implements OnInit {
   cancelStep() {
     this.step--;
   }
-  constructor(private router: Router, private datService: DataService, private toggleService: ToggleService) {}
+  constructor(private router: Router, private datService: DataService, public toggleService: ToggleService) {
+  }
 
   ngOnInit() {
-    this.MenuIsOpened = true;
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''), map(value => this._filter(value))
     );
     this.getInformacion();
+    this.sidenavState = this.toggleService.getSideNavState();
+    console.log(this.sidenavState);
   }
-  toggleSidenav() {
-    this.toggleService.toggle();
-    console.log('Funciona');
+
+  setSideNavState() {
+    this.sideNav = !this.sideNav;
+    console.log(this.sideNav);
+    this.toggleService.setSideNavState(this.sideNav);
   }
 
   public getInformacion() {

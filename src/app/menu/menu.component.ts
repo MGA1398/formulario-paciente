@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild, OnChanges } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { HostBinding } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatDrawer } from '@angular/material';
 import { ToggleService } from '../toggle.service';
 
 @Component({
@@ -11,13 +11,11 @@ import { ToggleService } from '../toggle.service';
 })
 export class MenuComponent implements OnInit {
 
-  @ViewChild(MatSidenav, {static: false}) matSidenav: MatSidenav;
+  @ViewChild( MatSidenav, {static: false}) matSidenav: MatSidenav;
 
   constructor(private router: Router, private toggleService: ToggleService) { }
 
   ngOnInit() {
-    this.toggleService.setSidenav(this.matSidenav);
-    console.log('dskjfil');
   }
 
   private details(): void {

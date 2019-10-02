@@ -1,34 +1,32 @@
-    <mat-sidenav #sidenav class="p-2 sidemenu" mode="side">
-        <div>
-            <img src="assets/images/logo.svg" alt="Doctorisy_logo" class="px-2 pt-3 pb-4">
-        </div>
-        <section class="d-flex px-2 py-3">
-            <a (click)=details();>
-                <img src="assets/images/profilepic.jpg" alt="fotoperfil" class="menuside"/>
-                <span class="pl-2 menus">Mi Cuenta</span>
-            </a>
-        </section>
-        <section class="d-flex px-2 py-3">
-            <a (click)=details1();>
-                <img src="assets/images/settings.svg" alt="ajustes" class="menuside"/>
-                <span class="pl-2 menus">Ajustes</span>                
-            </a>
-        </section>
-        <div class="d-flex px-2 py-3">
-            <a (click)=details2();>
-                <img src="assets/images/help.svg" alt="ayuda" class="menuside"/>
-                <span class="pl-2 menus">Ayuda</span>                
-            </a>
-        </div>
-        <div class="opciones">
-            <div class="py-3">
-            <a (click)=details(); class="opcion">Términos y Condiciones</a><br>
-            </div><div class="py-3">
-            <a (click)=details1(); class="opcion">Política de Privacidad</a><br>
-            </div><div class="py-3">
-            <a (click)=details2(); class="opcion">Acerca De</a><br>
-            </div><div class="py-3">
-            <a (click)=details(); class="sesion">Cerrar Sesión</a>
-            </div>
-        </div>
-    </mat-sidenav>
+<div>
+    <img src="assets/images/logo.svg" alt="Doctorisy_logo" class="px-2 pt-3 pb-4">
+</div>
+<section class="d-flex px-2 py-3">
+    <a (click)=details();>
+        <img src="assets/images/profilepic.jpg" alt="fotoperfil" class="menuside"/>
+        <span class="pl-2 menus">Mi Cuenta</span>
+    </a>
+</section>
+<section class="d-flex px-2 py-3">
+    <a (click)=details1();>
+        <img src="assets/images/settings.svg" alt="ajustes" class="menuside"/>
+        <span class="pl-2 menus">Ajustes</span>                
+    </a>
+</section>
+<div class="d-flex px-2 py-3">
+    <a (click)=details2();>
+        <img src="assets/images/help.svg" alt="ayuda" class="menuside"/>
+        <span class="pl-2 menus">Ayuda</span>                
+    </a>
+</div>
+<div class="opciones">
+    <div class="py-3">
+        <a (click)=details(); class="opcion">Términos y Condiciones</a><br>
+    </div><div class="py-3">
+        <a (click)=details1(); class="opcion">Política de Privacidad</a><br>
+    </div><div class="py-3">
+        <a (click)=details2(); class="opcion">Acerca De</a><br>
+    </div><div class="py-3">
+        <a (click)=details(); class="sesion">Cerrar Sesión</a>
+    </div>
+</div>

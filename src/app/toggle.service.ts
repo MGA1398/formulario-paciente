@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatDrawer } from '@angular/material';
+import { Subject } from 'rxjs';
+import { EventEmitter } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ToggleService {
-  private matSidenav: MatSidenav;
+  public sideNav: any = false;
+  public sideNavUpdated = new EventEmitter();
 
-  setSidenav(sidenav: MatSidenav) {
-    this.matSidenav = sidenav;
+  constructor() {
   }
 
-  toggle() {
-    this.matSidenav.toggle();
+  getSideNavState() {
+    return this.sideNavUpdated;
   }
 
-  constructor() { }
+  setSideNavState(state) {
+    this.sideNav = state;
+    this.sideNavUpdated.emit(this.sideNav);
+  }
+
 }
