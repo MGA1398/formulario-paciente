@@ -1,7 +1,7 @@
 {
     "pacientes": [
       {
-		"id": "sebastian",
+		"id": "1",
         "ci": 1775294538,
         "nombre": "Sebastian",
         "apellido": "Rodriguez",
@@ -9,7 +9,7 @@
         "address": "Colon"
       },
 	  {
-		"id": "paul",
+		"id": "2",
         "ci": 1775285864,
         "nombre": "Paul",
         "apellido": "Suarez",
@@ -17,7 +17,7 @@
         "address": "Carolina"
 	  },
 	  {
-		"id": "sofia",
+		"id": "3",
         "ci": 1778594206,
         "nombre": "Sofia",
         "apellido": "Perez",

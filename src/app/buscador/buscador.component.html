@@ -1,9 +1,10 @@
 <mat-sidenav-container class='app-sidenav-container' fullscreen>
-    <mat-sidenav #sidenav class="p-2 sidemenu" mode="side" opened="{{sidenavState | async }}">
+    <mat-sidenav #sidenav class="p-2 sidemenu">
+        <app-menu></app-menu>
     </mat-sidenav>
     <mat-sidenav-content>
         <nav class="d-flex justify-content-between">
-            <button class= "px-3 pt-3 text-decoration-none test" mat-button (click)="setSideNavState()">
+            <button class= "px-3 pt-3 text-decoration-none test" mat-button (click)="sidenav.open()">
                 <mat-icon class="menu" [ngStyle]="{'color':'white'}">menu</mat-icon>
             </button>
             <p class="pt-3 paciente" cdk-focus-start>Pacientes</p>
@@ -20,18 +21,18 @@
                             </mat-option> -->
                         </mat-autocomplete>
                     </mat-form-field>
-                    <button class="border border-0 float-right clear" onclick="document.getElementById('search').value = ''" (click)="selectItem='zero'">Cancelar</button>
+                    <button class="border border-0 float-right clear" onclick="document.getElementById('search').value = null" (click)="selectItem='zero'; clearSearch()">Cancelar</button>
                 </div>
             </div>
         </div>
 
-        <div *ngFor="let arreglo of arreglos | search:'id,nombre':searchText" class="border border-bottom-0">
-            <div *ngIf= "this.arreglo.id === 'sebastian' || ''" class="pl-1">
-            <a (click)=details(); id="sebastian">
+        <div *ngFor="let arreglo of arreglos | search:'id,nombre,ci':searchText" class="border border-bottom-0">
+            <div *ngIf= "this.arreglo.id === '1' || null" class="pl-1">
+            <a (click)=details(); id="1">
                     <div class="d-flex">
                             <div class="m-2">
                                     <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
-                                    <img *ngIf= "this.arreglo.id === 'sebastian'" src="assets/images/noDoctorisy.svg" class="align-self-end image2" alt="Gris logo">
+                                    <img *ngIf= "this.arreglo.id === '1'" src="assets/images/noDoctorisy.svg" class="align-self-end image2" alt="Gris logo">
                             </div>
                             <div class="col d-flex flex-column justify-content-center">
                                     <label>{{ arreglo.nombre }}</label>
@@ -41,12 +42,12 @@
             </a>
             </div>
 
-            <div *ngIf= "this.arreglo.id === 'paul' || ''" class="pl-1">
-            <a (click)=details1(); id="paul">
+            <div *ngIf= "this.arreglo.id === '2' || ''" class="pl-1">
+            <a (click)=details1(); id="2">
                 <div class="d-flex">
                         <div class="m-2">
                                 <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>
-                                <img *ngIf= "this.arreglo.id === 'paul'" src="assets/images/doctorisy.svg" class="align-self-end image2" alt="Azul logo">
+                                <img *ngIf= "this.arreglo.id === '2'" src="assets/images/doctorisy.svg" class="align-self-end image2" alt="Azul logo">
                         </div>
                         <div class="col d-flex flex-column justify-content-center">
                                 <label>{{ arreglo.nombre }}</label>
@@ -56,8 +57,8 @@
             </a>
             </div>
 
-            <div *ngIf= "this.arreglo.id === 'sofia' || ''" class="pl-1">
-            <a (click)=details2(); id="sofia">
+            <div *ngIf= "this.arreglo.id === '3' || ''" class="pl-1">
+            <a (click)=details2(); id="3">
                 <div class="d-flex">
                         <div class="m-2">
                                 <img src="assets/images/profilepic.jpg" style="width: 50px; height: 50px; border-radius:100%;"/>

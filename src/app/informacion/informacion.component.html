@@ -4,7 +4,7 @@
         <p class="title">Paciente</p>
         <div></div>
 </nav>
-<section *ngIf= "this.flagType === 'gris'" style="background-color: #FFE3E1; border-bottom: 1px solid #F7C0BC; z-index: 10; width: 100%;" class="position-fixed alerta">
+<section *ngIf= "this.flagType === '1'" style="background-color: #FFE3E1; border-bottom: 1px solid #F7C0BC; z-index: 10; width: 100%;" class="position-fixed alerta">
         <div class="d-flex align-items-center">
                 <div class="m-2">
                         <img src="assets/images/caution.svg" alt="warning">
@@ -13,7 +13,7 @@
 
         </div>
 </section>
-<section *ngIf= "this.flagType === 'azul'" style="background-color: #F8F5F5; border-bottom: 1px solid #DDDDDD; z-index: 10; width: 100%" class="position-fixed alerta">
+<section *ngIf= "this.flagType === '2'" style="background-color: #F8F5F5; border-bottom: 1px solid #DDDDDD; z-index: 10; width: 100%" class="position-fixed alerta">
         <div class="d-flex align-items-center">
                 <div class="m-2">
                         <img src="assets/images/edit.svg" alt="edit">
@@ -23,13 +23,13 @@
         </div>
 </section>
 <div class="parent" style="z-index: 1" cdk-focus-start>
-        <div *ngIf= "this.flagType !== 'norm'" style="margin-top: 55px"></div>
+        <div *ngIf= "this.flagType !== '3'" style="margin-top: 55px"></div>
         <section class="m-auto pb-3 container">
                 <div class="d-flex">
                         <div class="row mx-auto">
                                 <img src="assets/images/profilepic.jpg" class="d-block image1" alt="Profile Pic">
-                                <img *ngIf= "this.flagType === 'gris'" src="assets/images/noDoctorisy.svg" class="mx-auto align-self-end image2" alt="Gris logo">
-                                <img *ngIf= "this.flagType === 'azul'" src="assets/images/doctorisy.svg" class="mx-auto align-self-end image2" alt="Azul logo">
+                                <img *ngIf= "this.flagType === '1'" src="assets/images/noDoctorisy.svg" class="mx-auto align-self-end image2" alt="1 logo">
+                                <img *ngIf= "this.flagType === '2'" src="assets/images/doctorisy.svg" class="mx-auto align-self-end image2" alt="2 logo">
                         </div>
                 </div>
                 <h1 class="text-center font-weight-bold nombre m-3">Luciana Perez</h1>
@@ -140,7 +140,7 @@
                 </div>
                 </div>
                 </section>
-                <section *ngIf= "this.flagType !== 'norm'" class="py-3 infoapp">
+                <section *ngIf= "this.flagType !== '3'" class="py-3 infoapp">
                         <h3 class="font-weight-bold">Dentro de Doctroisy</h3>
                         <div class="text-center py-2">
                                 <span class="justify-text-center mx-3">Luciana Perez Vasquez ha agendado <br><strong>12 citas</strong> con Doctorisy.</span>
@@ -148,7 +148,7 @@
                 </section>
                 <section class="border-0 boton">
                         <button type="button" class="m-4 mx-auto d-block font-weight-bold reportar px-4 py-1">Reportar paciente</button>
-                        <p *ngIf= "this.flagType === 'norm'" class="text-center"><a href="#" id="eliminar">Eliminar Paciente</a></p>
+                        <p *ngIf= "this.flagType === '3'" class="text-center"><a href="#" id="eliminar">Eliminar Paciente</a></p>
                 </section>
         </form>
 </div>
